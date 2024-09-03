@@ -3,8 +3,8 @@ name: Unzip and Process Files
 on:
   push:
     branches:
-      - main  # 当推送到主分支时触发
-  workflow_dispatch:  # 允许手动触发工作流
+      - main
+  workflow_dispatch:
 
 jobs:
   unzip:
@@ -18,9 +18,8 @@ jobs:
       run: sudo apt-get install unzip
 
     - name: Unzip files
-      run: unzip path/to/your/file.zip -d path/to/extract/
+      run: unzip ChatGPT-Midjourney-RocketAI-main.zip -d extracted_files/
 
     - name: Do something with the extracted files
       run: |
-        # 在这里添加处理解压后文件的步骤
-        ls path/to/extract/
+        ls extracted_files/
