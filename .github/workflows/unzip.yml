@@ -14,12 +14,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: List files in root directory
+      run: ls -alh
+
     - name: Install unzip
       run: sudo apt-get install unzip
 
     - name: Unzip files
       run: unzip ChatGPT-Midjourney-RocketAI-main.zip -d extracted_files/
 
-    - name: Do something with the extracted files
-      run: |
-        ls extracted_files/
+    - name: List extracted files
+      run: ls -alh extracted_files/
